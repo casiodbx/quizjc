@@ -1,0 +1,17 @@
+#fotoAutor{
+	float:left; 
+	display:block;	
+}
+#fotoAutor p {
+	font-style: italic;
+	font-weight: 800;
+	text-align:left;
+}
+#video{
+	float:right; 
+}
+#video p {
+	font-style: italic;
+	font-weight: 800;
+	text-align:left;
+}
