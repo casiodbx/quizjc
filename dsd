@@ -1,0 +1,15 @@
+[1mdiff --cc models/models.js[m
+[1mindex 6a799d5,fcd7ddb..0000000[m
+[1m--- a/models/models.js[m
+[1m+++ b/models/models.js[m
+[36m@@@ -1,6 -1,6 +1,10 @@@[m
+  var path=require('path');[m
+  [m
+[32m++<<<<<<< HEAD[m
+[32m +//DATABASE_URL = "postgres://tslvylooqsufhf:HPWXywIq9pxZMv9Ej6RxBtpOIR@ec2-54-83-43-118.compute-1.amazonaws.com:5432/dbk956r9tu9ivs";[m
+[32m++=======[m
+[32m+ DATABASE_URL = "postgres://tslvylooqsufhf:HPWXywIq9pxZMv9Ej6RxBtpOIR@ec2-54-83-43-118.compute-1.amazonaws.com:5432/dbk956r9tu9ivs";[m
+[32m++>>>>>>> 7c6934daf4d6db44f9ab09fded93aaf350f741c8[m
+  //SQLite DATABASE_URL =sqlite://:@:/[m
+  var url = process.env.DATABASE_URL.match(/(.*)\:\/\/(.*?)\:(.*)@(.*)\:(.*)\/(.*)/);[m
+  var DB_name		=	(url[6]|| null);[m
