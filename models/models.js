@@ -1,6 +1,10 @@
 var path=require('path');
 
+<<<<<<< HEAD
 //DATABASE_URL = "postgres://tslvylooqsufhf:HPWXywIq9pxZMv9Ej6RxBtpOIR@ec2-54-83-43-118.compute-1.amazonaws.com:5432/dbk956r9tu9ivs";
+=======
+DATABASE_URL = "postgres://tslvylooqsufhf:HPWXywIq9pxZMv9Ej6RxBtpOIR@ec2-54-83-43-118.compute-1.amazonaws.com:5432/dbk956r9tu9ivs";
+>>>>>>> 7c6934daf4d6db44f9ab09fded93aaf350f741c8
 //SQLite DATABASE_URL =sqlite://:@:/
 var url = process.env.DATABASE_URL.match(/(.*)\:\/\/(.*?)\:(.*)@(.*)\:(.*)\/(.*)/);
 var DB_name		=	(url[6]|| null);
