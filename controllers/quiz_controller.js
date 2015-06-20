@@ -22,13 +22,13 @@ exports.listQuestion= function(req, res){
   if(req.query.search) {
      var filtro  = (req.query.search || '').replace(" ", "%");
      models.Quiz.findAll({where:["pregunta like ?", '%'+filtro+'%'],order:'pregunta ASC'}).then(function(quizes){
-       res.render('quizes/index', {quizes: quizes});
+       res.render('quizes/listQuestion', {quizes: quizes});
      }).catch(function(error) { next(error);});
 
   } else {
 
    models.Quiz.findAll().then(function(quizes){
-       res.render('quizes/index', {quizes: quizes});
+       res.render('quizes/listQuestion', {quizes: quizes});
        }).catch(function(error) { next(error);});
   }
 };
