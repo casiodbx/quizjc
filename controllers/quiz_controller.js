@@ -17,8 +17,9 @@ exports.index= function(req, res){
 	res.render('quizes/index', {});	
 };
 
-//GET /quizes/:search
+//GET /quizes:search
 exports.listQuestion= function(req, res){
+	alert("ddeddsdsdsds");
 	models.Quiz.findAll({where: ["pregunta like ?", "%"+req.search+"%"]}).then(function(quizes) {
 		res.render('quizes/listQuestion', {quizes: quizes});	
 	}
