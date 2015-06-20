@@ -19,7 +19,8 @@ exports.index= function(req, res){
 
 //GET /quizes:search
 exports.listQuestion= function(req, res){
-	models.Quiz.findAll({where: {pregunta: 'Capital de Italia'}, order: 'pregunta ASC'}).then(function(quizes) {
+	var filtro  = (req.query.search || '').replace(" ", "%");
+	models.Quiz.findAll({where:["pregunta like ?", '%'+filtro+'%'],order:'pregunta ASC'}).then(function(quizes) {
 		res.render('quizes/listQuestion', {quizes: quizes});	
 	}
   ).catch(function(error){ next(error);})
