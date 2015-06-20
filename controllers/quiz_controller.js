@@ -19,11 +19,18 @@ exports.index= function(req, res){
 
 //GET /quizes:search
 exports.listQuestion= function(req, res){
-	var filtro  = (req.query.search || '').replace(" ", "%");
-	models.Quiz.findAll({where:["pregunta like ?", '%'+filtro+'%'],order:'pregunta ASC'}).then(function(quizes) {
-		res.render('quizes/listQuestion', {quizes: quizes});	
-	}
-  ).catch(function(error){ next(error);})
+  if(req.query.search) {
+     var filtro  = (req.query.search || '').replace(" ", "%");
+     models.Quiz.findAll({where:["pregunta like ?", '%'+filtro+'%'],order:'pregunta ASC'}).then(function(quizes){
+       res.render('quizes/index', {quizes: quizes});
+     }).catch(function(error) { next(error);});
+
+  } else {
+
+   models.Quiz.findAll().then(function(quizes){
+       res.render('quizes/index', {quizes: quizes});
+       }).catch(function(error) { next(error);});
+  }
 };
 
 
@@ -46,7 +53,7 @@ exports.new= function(req, res){
 		{pregunta:"Pregunta", respuesta:"Respuesta"}
 	);
 
-	res.render('new', {quiz:quiz});
+	res.render('/new', {quiz:quiz});
 };
 
 //GET /quizes/create
