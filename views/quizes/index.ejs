@@ -1,5 +1,5 @@
-<table>
-<% var i; for (i=0; i < quizes.length; i++) {%>
-	<tr><td> <a href="quizes/<%=quizes[i].id %>"><%=quizes[i].pregunta %></a></td></tr>
-<% } %>	
-</table>
+<form method ="get" action="/quizes">
+  Escribe la palabra a buscar:
+  <input type="text" name="search" value="Texto a buscar:"/>
+  <input type="submit" value="Buscar"/>
+</form>
