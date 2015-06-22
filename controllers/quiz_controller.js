@@ -47,13 +47,13 @@ exports.answer = function (req,res){
 		}
 		res.render('quizes/answer',{quiz:req.quiz, respuesta:resultado});
 };
+
 //GET /quizes/new
-exports.new= function(req, res){
+exports.new = function(req, res){
 	var quiz = models.Quiz.build(//crea objeto quiz
 		{pregunta:"Pregunta", respuesta:"Respuesta"}
 	);
-
-	res.render('/new', {quiz:quiz});
+	res.render('quizes/new', {quiz:quiz});
 };
 
 //GET /quizes/create
