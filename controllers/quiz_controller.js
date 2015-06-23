@@ -45,7 +45,7 @@ exports.answer = function (req,res){
 		if(req.query.respuesta===req.quiz.respuesta){
 			resultado='Correcto';
 		}
-		res.render('quizes/answer',{quiz:req.quiz, respuesta:resultado,errors[]]});
+		res.render('quizes/answer',{quiz:req.quiz, respuesta:resultado,errors:[]});
 };
 
 //GET /quizes/new
