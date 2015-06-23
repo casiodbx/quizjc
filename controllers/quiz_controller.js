@@ -28,7 +28,7 @@ exports.listQuestion= function(req, res){
   } else {
 
    models.Quiz.findAll().then(function(quizes){
-       res.render('quizes/listQuestion', {quizes: quizes});
+       res.render('quizes/listQuestion', {quizes: quizes,errors:[]});
        }).catch(function(error) { next(error);});
   }
 };
