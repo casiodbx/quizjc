@@ -70,5 +70,5 @@ exports.create = function(req, res){
 				    // Redirección HTTP (URL relativo) lista de preguntas
 			}
 		}
-	);	
+	).catch(function(error){next(error)});	
 };
