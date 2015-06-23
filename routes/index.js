@@ -9,7 +9,7 @@ router.get('/', function(req, res) {
 });
 /*GET autores*/
 router.get('/autor', function(req, res) {
-  res.render('autor', { autor: 'Juan Carlos Álvarez Martín' });
+  res.render('autor', { autor: 'Juan Carlos Álvarez Martín',errors:[]});
 });
 
 //Autoload de comandos con :quizId
