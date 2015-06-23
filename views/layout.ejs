@@ -25,7 +25,15 @@
         <span><a href="/autor">autor</a></span>
 	  	</nav>
 	  	<section class="main" id="s1">
-	  	<%- body %>
+       <%if(errors.length){%>
+        <span id='ErrorMsgs'>
+          Correguir errores:<br/>
+          <% for (var i in errors) {%>
+            <span><%= errors[i].message %> </span><br/>
+          <% } %>
+        <span> 
+      <% } %>               
+	  	<div><%- body %></div>
 	  	</section>
 	  	<footer class="main" id="f1">
 	  		<a href="https://github.com/casiodbx/quizjc">
