@@ -13,8 +13,8 @@ exports.load = function(req, res, next, quizId){
 
 
 //GET /quizes
-exports.index= function(req, res){
-	res.render('quizes/index', {quizes: quizes,errors:[]});	
+exports.index= function(req, res){	
+	res.render('quizes/index', {errors:[]});	
 };
 
 //GET /quizes:search
