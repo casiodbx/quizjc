@@ -61,8 +61,7 @@ exports.create = function(req, res){
 	var quiz = models.Quiz.build(req.body.quiz);
 	console.log("LLego al quiz");
 	quiz.validate().then(
-		 console.log("Entro del del then de validate");
-	    function(err){
+		 function(err){
 	     if (err) {
 	     	console.log("1");
 	        res.render('quizes/new', {quiz: quiz, errors: err.errors});
