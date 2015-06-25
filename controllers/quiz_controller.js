@@ -61,7 +61,8 @@ exports.create = function(req, res){
 	var quiz = models.Quiz.build(req.body.quiz);
 	console.log("LLego al quiz");
 	quiz.save({fields: ["pregunta", "respuesta"]})
-	        .then( function(){ res.redirect('/quizes')}) 
+	        .then( function(){ res.redirect('/quizes');
+	    })
 	/*quiz.validate().then(
 		 function(err){
 	     if (err) {
