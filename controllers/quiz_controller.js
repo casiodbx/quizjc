@@ -60,17 +60,17 @@ exports.new = function(req, res){
 exports.create = function(req, res){
 	var quiz = models.Quiz.build(req.body.quiz);
 	console.log("LLego al quiz");
-	quiz.validate().then(
+	quiz.save({fields: ["pregunta", "respuesta"]})
+	        .then( function(){ res.redirect('/quizes')}) 
+	/*quiz.validate().then(
 		 function(err){
 	     if (err) {
-	     	console.log("1");
-	        res.render('quizes/new', {quiz: quiz, errors: err.errors});
+	          res.render('quizes/new', {quiz: quiz, errors: err.errors});
 	      } else {
-	      	console.log("2");
-	        quiz // save: guarda en DB campos pregunta y respuesta de quiz
+	      	quiz // save: guarda en DB campos pregunta y respuesta de quiz
 	        .save({fields: ["pregunta", "respuesta"]})
 	        .then( function(){ res.redirect('/quizes')}) 
 	      }      // res.redirect: Redirección HTTP a lista de preguntas
 	    }
-  	).catch(function(error){next(error)});	
+  	).catch(function(error){next(error)});	*/
 };
