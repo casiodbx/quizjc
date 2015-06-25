@@ -59,11 +59,15 @@ exports.new = function(req, res){
 //GET /quizes/create
 exports.create = function(req, res){
 	var quiz = models.Quiz.build(req.body.quiz);
+	console.log("LLego al quiz");
 	quiz.validate().then(
+		 console.log("Entro del del then de validate");
 	    function(err){
 	     if (err) {
+	     	console.log("1");
 	        res.render('quizes/new', {quiz: quiz, errors: err.errors});
 	      } else {
+	      	console.log("2");
 	        quiz // save: guarda en DB campos pregunta y respuesta de quiz
 	        .save({fields: ["pregunta", "respuesta"]})
 	        .then( function(){ res.redirect('/quizes')}) 
