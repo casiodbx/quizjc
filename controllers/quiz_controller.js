@@ -84,14 +84,14 @@ exports.update = function(req,res){
 	req.quiz.pregunta=req.body.quiz.pregunta;
 	req.quiz.respuesta=req.body.quiz.respuesta;
 
-	var errors = quiz.validate();//ya qe el objeto errors no tiene then(
+	var errors = req.quiz.validate();//ya qe el objeto errors no tiene then(
 	if (errors)
 		{
 			var i=0; var errores=new Array();//se convierte en [] con la propiedad message por compatibilida con layout
 			for (var prop in errors) errores[i++]={message: errors[prop]};
 			res.render('quizes/edit', {quiz: req.quiz, errors: errores});
 		} else {
-			quiz // save: guarda en DB campos pregunta y respuesta de quiz
+			req.quiz // save: guarda en DB campos pregunta y respuesta de quiz
 			.save({fields: ["pregunta", "respuesta"]})
 			.then( function(){ res.redirect('/quizes')}) ;
 		}
