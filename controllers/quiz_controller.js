@@ -61,10 +61,12 @@ exports.create = function(req, res){
 	var quiz = models.Quiz.build( req.body.quiz );
 
 	var errors = quiz.validate();//ya qe el objeto errors no tiene then(
-	if (errors)
+	if (errors.length)
 		{
-			var i=0; var errores=new Array();//se convierte en [] con la propiedad message por compatibilida con layout
-			for (var prop in errors) errores[i++]={message: errors[prop]};
+			var i=0; 
+			var errores=new Array();//se convierte en [] con la propiedad message por compatibilida con layout
+			for (var prop in errors) 
+				errores[i++]={message: errors[prop]};
 			res.render('quizes/new', {quiz: quiz, errors: errores});
 		} else {
 			quiz // save: guarda en DB campos pregunta y respuesta de quiz
