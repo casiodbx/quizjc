@@ -61,7 +61,7 @@ exports.create = function(req, res){
 	var quiz = models.Quiz.build( req.body.quiz );
 
 	var errors = quiz.validate();//ya qe el objeto errors no tiene then(
-	if (errors.length)
+	if (errors)
 		{
 			var i=0; 
 			var errores=new Array();//se convierte en [] con la propiedad message por compatibilida con layout
