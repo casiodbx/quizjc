@@ -58,9 +58,9 @@ exports.new = function(req, res){
 
 //GET /quizes/create
 exports.create = function(req, res){
-	var quiz = models.Quiz.build( req.body.quiz );
+	//var quiz = models.Quiz.build( req.body.quiz );
 
-	var errors = quiz.validate();//ya qe el objeto errors no tiene then(
+	var errors = req.quiz.validate();//ya qe el objeto errors no tiene then(
 	/*if (errors || (typeof errors === 'undefined') ) 
 		{
 			var i=0; 
@@ -69,7 +69,7 @@ exports.create = function(req, res){
 				errores[i++]={message: errors[prop]};
 			res.render('quizes/new', {quiz: quiz, errors: errores});
 		} else {*/
-			quiz // save: guarda en DB campos pregunta y respuesta de quiz
+			req.quiz // save: guarda en DB campos pregunta y respuesta de quiz
 			.save({fields: ["pregunta", "respuesta"]})
 			.then( function(){ res.redirect('/quizes')}) ;
 		//}
