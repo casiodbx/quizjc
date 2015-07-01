@@ -8,8 +8,11 @@
 		<% if(quiz.tema === temas[i]) {
 			 console.log(quiz.tema + 'pamplonaa');
 		} %>
-    
-        <option value="<%= temas[i] %>"><%= temas[i] %> </option>  
+
+		<% if(quiz.tema != temas[i]) {
+			 <option value="<%= temas[i] %>"><%= temas[i] %> </option>  
+		} %>    
+        
 	<% } %> 
 </select><br/>
 
