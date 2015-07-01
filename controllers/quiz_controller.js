@@ -1,4 +1,5 @@
 var models = require('../models/models.js');
+var temas = ["otro","humanidades","ocio","ciencia","tecnologia"];
 //Autoload -factoriza el código si ruta incluye :quizId
 exports.load = function(req, res, next, quizId){
 	models.Quiz.find(quizId).then(
@@ -52,8 +53,8 @@ exports.answer = function (req,res){
 exports.new = function(req, res){
 	var quiz = models.Quiz.build(//crea objeto quiz
 		{pregunta:"Pregunta", respuesta:"Respuesta",tema:"tema"}
-	);
-	res.render('quizes/new', {quiz:quiz,errors:[]});
+	);	
+	res.render('quizes/new', {quiz:quiz,temas:temas,errors:[]});
 };
 
 //GET /quizes/create
@@ -78,14 +79,14 @@ exports.create = function(req, res){
 //GET /quizes/:id/edit
 exports.edit = function(req,res){
 	var quiz= req.quiz;//autoload de instancia quiz
-	res.render('quizes/edit',{quiz:quiz, errors:[]});
+	res.render('quizes/edit',{quiz:quiz,temas:temas,errors:[]});
 };
 
 //PUT /quizes:id
 exports.update = function(req,res){
 	req.quiz.pregunta=req.body.quiz.pregunta;
 	req.quiz.respuesta=req.body.quiz.respuesta;
-
+	req.quiz.tema=req.body.quiz.tema;
 	var errors = req.quiz.validate();//ya qe el objeto errors no tiene then(
 	if (errors)
 		{
@@ -94,7 +95,7 @@ exports.update = function(req,res){
 			res.render('quizes/edit', {quiz: req.quiz, errors: errores});
 		} else {
 			req.quiz // save: guarda en DB campos pregunta y respuesta de quiz
-			.save({fields: ["pregunta", "respuesta","tema"]})
+			.save({fields: ["pregunta", "respuesta", "tema"]})
 			.then( function(){ res.redirect('/quizes')}) ;
 		}
 };
