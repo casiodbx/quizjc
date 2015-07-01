@@ -2,9 +2,14 @@
 <input type="text" id="preg" name="quiz[pregunta]" value="<%= quiz.pregunta %>"/> <p>
 <label for="resp" class="rem">Respuesta:</label>
 <input type="text" id="resp" name="quiz[respuesta]" value="<%= quiz.respuesta %>"/> <p>
-<select  name="quiz[tema]" value="<%= quiz.tema %>">
+<label for="tema" class="rem">Tema:</label>
+<select  id="tema" name="quiz[tema]" value="<%= quiz.tema %>">
 	<% for (var i in temas) {%>
-		<option value="<%= temas[i] %>"><%= temas[i] %> </option>   
+		<% if(quiz.tema===temas[i]) {%>
+			<option value="<%= temas[i] %>"><%= temas[i] %> </option>   
+		<%} else {%>
+            <option value="<%= temas[i] %>" selected><%= temas[i] % > </option>
+         <% }>
 	<% } %> 
 </select><br/>
 
