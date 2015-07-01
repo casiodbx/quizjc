@@ -4,7 +4,7 @@
 <input type="text" id="resp" name="quiz[respuesta]" value="<%= quiz.respuesta %>"/> <p>
 <select  name="quiz[tema]" value="<%= quiz.tema %>">
 	<% for (var i in temas) {%>
-			
+		<option value="<%= temas[i] %>"><%= temas[i] %> </option>   
 	<% } %> 
 </select><br/>
 
