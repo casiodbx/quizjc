@@ -6,7 +6,7 @@
 <select  id="tema" name="quiz[tema]" value="<%= quiz.tema %>">
 	<% for (var i in temas) {%>
 		<% if(quiz.tema === temas[i]) {
-			 console.log(quiz.tema + 'pamplonaa');
+			  <option value="<%= temas[i] %>" selected><%= temas[i] %> </option> 
 		} %>
 
 		<% if(quiz.tema != temas[i]) { %>
