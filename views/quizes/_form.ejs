@@ -5,9 +5,9 @@
 <label for="tema" class="rem">Tema:</label>
 <select  id="tema" name="quiz[tema]" value="<%= quiz.tema %>">
 	<% for (var i in temas) {%>
-		<% if(quiz.tema === temas[i]) {
+		<% if(quiz.tema === temas[i]) { %>
 			  <option value="<%= temas[i] %>" selected><%= temas[i] %> </option> 
-		} %>
+		<%} %>
 
 		<% if(quiz.tema != temas[i]) { %>
 			 <option value="<%= temas[i] %>"><%= temas[i] %> </option>  
