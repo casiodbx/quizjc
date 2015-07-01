@@ -9,9 +9,9 @@
 			 console.log(quiz.tema + 'pamplonaa');
 		} %>
 
-		<% if(quiz.tema != temas[i]) {
+		<% if(quiz.tema != temas[i]) { %>
 			 <option value="<%= temas[i] %>"><%= temas[i] %> </option>  
-		} %>    
+		<% } %>    
         
 	<% } %> 
 </select><br/>
