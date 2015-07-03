@@ -10,7 +10,7 @@ exports.create = function(req, res){
 	var comment = models.Comment.build( {texto: req.body.comment.texto,
 										 QuizId: req.params.quizId });
 
-	var errors = quiz.validate();//ya qe el objeto errors no tiene then(
+	var errors = comment.validate();//ya qe el objeto errors no tiene then(
 	if (errors || (typeof errors === 'undefined') ) 
 		{
 			var i=0; 
