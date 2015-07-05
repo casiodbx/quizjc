@@ -15,7 +15,7 @@ router.get('/autor', function(req, res) {
 
 //Autoload de comandos con :quizId
 router.param('quizId',quizController.load); //autoload :quizId
-router.param('commentId',commmentController.load);//autoload:commentId
+router.param('commentId',commentController.load);//autoload:commentId
 
 //Definición de rutas de sesion
 router.get('/login', 	sessionController.new);		//formulario login
