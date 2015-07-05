@@ -7,8 +7,6 @@
 <p><a href="/quizes/<%= quiz.id %>/comments/new"><button> Nuevo Comentario</button></a></p>
 
 <p><strong>Comentarios:</strong></p>
-1 <%= quiz.comments[0]%>
-2 <%= quiz.comments[0].texto%>
-<%for(index in quiz.Comments){%>
-	<p>- <%=quiz.Comments[index].texto%></p>	
+<%for(index in quiz.comments){%>
+	<p>- <%=quiz.comments[index].texto%></p>	
 <%}%>
