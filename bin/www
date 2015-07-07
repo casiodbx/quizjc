@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 var debug = require('debug')('quizjc');
 var app = require('../app');
-var fs = required('fs');
-var https = required('https');
+var fs = require("fs");
+var https = require("https");
 
 var options = {
 	key: fs.readFileSync('certs/quiz-2015-key.pem').toString(),
