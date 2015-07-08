@@ -44,6 +44,7 @@ app.use(function(req, res, next){
 
 //app.use('/', routes);
 app.use('/', function(req, res, next) {
+    console.log('Entra en función');
 
     var now = new Date();
     var stamp = req.session.time ? new Date(req.session.time) : new Date();
@@ -51,12 +52,14 @@ app.use('/', function(req, res, next) {
     if (!req.path.match(/\/login|\/logout/)) {
         // validamos tiempo ultima peticion > 2 minutos
         if ((now.getMinutes() - 2) > stamp.getMinutes()) {
+                       console.log('tendria que dar error');
             var errors = req.session.errors || 'Sesión caducada ...';
             req.session.errors = {};
             res.render('sessions/new', {
             errors: errors
             });
         } else {
+            console.log('renueva hora');
             // refrescamos tiempo ultima peticion
             req.session.time = new Date();
             next();
