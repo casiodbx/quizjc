@@ -44,14 +44,13 @@ app.use(function(req, res, next){
 
 //app.use('/', routes);
 app.use('/', function(req, res, next) {
-    console.log('Entra en función');
-
     var now = new Date();
     var stamp = req.session.time ? new Date(req.session.time) : new Date();
 
     if (!req.path.match(/\/login|\/logout/)) {
         // validamos tiempo ultima peticion > 2 minutos
-        if ((now.getMinutes() - 2) > stamp.getMinutes()) {
+        console.log("hora actual ")
+        if ((now.getSeconds() - 120) > stamp.getSeconds()) {
             req.session.time=null;//eliminamos variable de sesión
                        console.log('tendria que dar error');
             var errors = req.session.errors || 'Sesión caducada ...';
