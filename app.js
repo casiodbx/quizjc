@@ -49,7 +49,7 @@ app.use('/', function(req, res, next) {
 
     if (!req.path.match(/\/login|\/logout/)) {
         // validamos tiempo ultima peticion > 2 minutos
-        console.log("hora actual ")
+        console.log("hora actual " + now.getSeconds())
         if ((now.getSeconds() - 120) > stamp.getSeconds()) {
             req.session.time=null;//eliminamos variable de sesión
                        console.log('tendria que dar error');
