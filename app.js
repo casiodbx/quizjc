@@ -52,6 +52,7 @@ app.use('/', function(req, res, next) {
     if (!req.path.match(/\/login|\/logout/)) {
         // validamos tiempo ultima peticion > 2 minutos
         if ((now.getMinutes() - 2) > stamp.getMinutes()) {
+            req.session.time=null;//eliminamos variable de sesión
                        console.log('tendria que dar error');
             var errors = req.session.errors || 'Sesión caducada ...';
             req.session.errors = {};
