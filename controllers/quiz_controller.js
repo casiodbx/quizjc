@@ -117,8 +117,8 @@ exports.destroy= function(req, res){
 //Para la estadísticas de la base de datos
 exports.statistics=function(req, res){
 	var numeroPgtas=4;
-	var numeroConmentarios=10;
-	var pgtasSinComenarios=2;
+	var numeroComentarios=10;
+	var pgtasSinComentarios=2;
 	var texto;
 	console.log('LLego al controller');
 	texto='Número de preguntas : '+ numeroPgtas +'</br>' +
