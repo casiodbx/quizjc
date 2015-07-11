@@ -120,10 +120,16 @@ exports.statistics=function(req, res){
 	var numeroComentarios=10;
 	var pgtasSinComentarios=2;
 	var mensaje;
+	//Obtengo número de preguntas
+	models.Quiz.findAndCountAll().then(function (result) {
+	  numeroPgtas=result;
+	}).catch(function(error) { next(error);});
+
+
 	mensaje='Número de preguntas : '+ numeroPgtas +"\n" +
-		  'Número de comentarios : '+ numeroComentarios +"\n"+
-		  'Número medio de comentarios por pregunta : '+(numeroPgtas/numeroComentarios)+"\n"+
-		  'Número de preguntas sin comentarios : '+pgtasSinComentarios+"\n"+	
-		  'Número de preguntas con comentarios : '+(numeroPgtas-pgtasSinComentarios);	
+		  'Número de comentarios : '+ numeroComentarios +"\n";
+		  //'Número medio de comentarios por pregunta : '+(numeroPgtas/numeroComentarios)+"\n"+
+		 // 'Número de preguntas sin comentarios : '+pgtasSinComentarios+"\n"+	
+		 // 'Número de preguntas con comentarios : '+(numeroPgtas-pgtasSinComentarios);	
 	res.render('statistics', {texto:mensaje,errors:[]}); 
 };
