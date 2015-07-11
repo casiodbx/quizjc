@@ -120,10 +120,11 @@ exports.statistics=function(req, res){
 	var numeroConmentarios=10;
 	var pgtasSinComenarios=2;
 	var texto;
-	texto='Número de preguntas : '+ numeroPgtas +'</br>' +
-		  'Número de comentarios : '+ numeroComentarios +'</br>';
+	console.log('LLego al controller');
+	//texto='Número de preguntas : '+ numeroPgtas +'</br>' +
+	//	  'Número de comentarios : '+ numeroComentarios +'</br>';
 		  // "Número medio de comentarios por pregunta : "+(numeroComentarios/numeroPgtas)+"</br>"+
 		  // "Número de preguntas sin comentarios : "+ptasSinComenarios+"</br>"+	
 		 //  "Número de preguntas con comentarios : "+numeroPgtas-pgtasSinComentarios+"</br>";	
-		   res.render('statistics', {texto:texto,errors:[]}); 
+	res.render('statistics', {texto:texto,errors:[]}); 
 };
