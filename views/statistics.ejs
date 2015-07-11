@@ -1,4 +1,7 @@
 <h3>Estadísticas del contenido de la base de datos actual</h3>
-<%for(index in statistics){%>	
-	<p>- <%=statistics[index]%></p>			
-<%}%>
+<p> El número de preguntas:  <%=statistics.n_preguntas%></p> <br/>
+<p> El número de comentarios totales: <%=statistics.n_comentarios%></p> <br/>
+<p> El número medio de comentarios por pregunta: <%=statistics.promedio_comentarios%></p> <br/>
+<p> El número de preguntas sin comentarios: <%=statistics.preg_sin_com%></p> <br/>
+<p> El número de preguntas con comentarios: <%=statistics.preg_con_com%></p> <br/>
+<p> El número de comentarios sin publicar: <%=sstatistics.comentarios_no_pub%></p> <br/>
