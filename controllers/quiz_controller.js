@@ -121,12 +121,10 @@ exports.statistics=function(req, res){
 	var pgtasSinComentarios=2;
 	var mensaje;
 	//Obtengo número de preguntas
-	models.Quiz.findAndCountAll().then(function (result) {
-	  numeroPgtas=result.count;
+	models.Quiz.findAndCountAll().then(function (numeroPgtas) {
 	}).catch(function(error) { next(error);});
 
-
-	mensaje='Número de preguntas : '+ numeroPgtas +"\n" +
+	mensaje='Número de preguntas : '+ numeroPgtas.count +"\n" +
 		  'Número de comentarios : '+ numeroComentarios +"\n";
 		  //'Número medio de comentarios por pregunta : '+(numeroPgtas/numeroComentarios)+"\n"+
 		 // 'Número de preguntas sin comentarios : '+pgtasSinComentarios+"\n"+	
