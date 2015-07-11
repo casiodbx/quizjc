@@ -122,8 +122,7 @@ exports.statistics=function(req, res){
 	var mensaje;
 	//Obtengo número de preguntas
 	models.Quiz.findAndCountAll().then(function (result) {
-	  console.log(result.count);
-	  numeroPgtas=result;
+	  numeroPgtas=result.count;
 	}).catch(function(error) { next(error);});
 
 
