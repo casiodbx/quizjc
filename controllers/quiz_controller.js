@@ -1,19 +1,5 @@
 var models = require('../models/models.js');
 var temas = ["otro","humanidades","ocio","ciencia","tecnologia"];
-//Autoload -factoriza el código si ruta incluye :quizId
-/*exports.load = function(req, res, next, quizId){
-	models.Quiz.find({
-			where: {id: Number(quizId) },
-			include: [{model: models.Comment}]
-		}).then(
-		function(quiz){
-			if (quiz){
-				req.quiz=quiz;
-				next();
-			}else{next(new Error('No existe quizId='+quizId));}
-		}
-	).catch(function(error){next(error);});
-};*/
 
 // Autoload :id
 exports.load = function(req, res, next, quizId) {
@@ -126,4 +112,18 @@ exports.destroy= function(req, res){
 	req.quiz.destroy(). then( function(){
 		res.redirect('/quizes');
 	}).catch(function(error){next(error)});	
+};
+
+//Para la estadísticas de la base de datos
+exports.statistics=function(req, res){
+	var numeroPgtas=4;
+	var numeroConmentarios=10;
+	var pgtasSinComenarios=2;
+	var texto;
+	texto="Número de preguntas : "+numeroPgtas+"</br>" +
+		   "Número de comentarios : "+numeroComentarios+"</br>"+
+		   "Número medio de comentarios por pregunta : "+(numeroComentarios/numeroPgtas)+"</br>"+
+		   "Número de preguntas sin comentarios : "+ptasSinComenarios+"</br>"+	
+		   "Número de preguntas con comentarios : "+numeroPgtas-pgtasSinComentarios+"</br>";	
+		   res.render('statistics', {texto:texto,errors:[]}); 
 };
