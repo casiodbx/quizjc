@@ -122,8 +122,8 @@ exports.statistics=function(req, res){
 	var mensaje;
 	mensaje='Número de preguntas : '+ numeroPgtas +'\n' +
 		  'Número de comentarios : '+ numeroComentarios +'\n'+
-		  'Número medio de comentarios por pregunta : '+(numeroPgtas/numeroComentarios)+' \n';
-		  //'Número de preguntas sin comentarios : '+pgtasSinComentarios+' \n'+	
-		  //'Número de preguntas con comentarios : '+numeroPgtas-pgtasSinComentarios+' \n';	
+		  'Número medio de comentarios por pregunta : '+(numeroPgtas/numeroComentarios)+' \n'
+		  'Número de preguntas sin comentarios : '+pgtasSinComentarios+' \n'+	
+		  'Número de preguntas con comentarios : '+numeroPgtas-pgtasSinComentarios+' \n';	
 	res.render('statistics', {texto:mensaje,errors:[]}); 
 };
