@@ -126,5 +126,5 @@ exports.statistics=function(req, res){
 		  // "Número medio de comentarios por pregunta : "+(numeroComentarios/numeroPgtas)+"</br>"+
 		  // "Número de preguntas sin comentarios : "+ptasSinComenarios+"</br>"+	
 		 //  "Número de preguntas con comentarios : "+numeroPgtas-pgtasSinComentarios+"</br>";	
-	res.render('statistics', {texto:texto,errors:[]}); 
+	res.render('statistics', {texto:'Esto es una prueba',errors:[]}); 
 };

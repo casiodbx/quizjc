@@ -39,6 +39,6 @@ router.post('/quizes/:quizId(\\d+)/comments',								commentController.create);
 router.get('/quizes/:quizId(\\d+)/comments/:commentId(\\d+)/publish',		commentController.publish);
 
 //Para estadísticas
-router.get('/statistics', quizController.listQuestion);
+router.get('/statistics', quizController.statistics);
 
 module.exports = router;
