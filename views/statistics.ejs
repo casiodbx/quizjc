@@ -1,2 +1,4 @@
 <h3>Estadísticas del contenido de la base de datos actual</h3>
-<p><%=statistics%></p>
+<%for(index in statistics){%>	
+	<p>- <%=statistics[index]%></p>			
+<%}%>
