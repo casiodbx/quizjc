@@ -121,7 +121,7 @@ exports.statistics=function(req, res){
 	var pgtasSinComentarios=2;
 	var mensaje;
 	//Obtengo número de preguntas
-	numeroPgtas=models.Quiz.findAndCountAll().count;
+	numeroPgtas=models.Quiz.findAndCountAll();
 
 	mensaje='Número de preguntas : '+ numeroPgtas.count +"\n" +
 		  'Número de comentarios : '+ numeroComentarios +"\n";
