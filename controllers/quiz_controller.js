@@ -119,11 +119,11 @@ exports.statistics=function(req, res){
 	var numeroPgtas=4;
 	var numeroComentarios=10;
 	var pgtasSinComentarios=2;
-	var texto;
-	texto='Número de preguntas : '+ numeroPgtas +' \n' +
-		  'Número de comentarios : '+ numeroComentarios +' \n'+
+	var mensaje;
+	mensaje='Número de preguntas : '+ numeroPgtas +' \n' +
+		  'Número de comentarios : '+ numeroComentarios +' \n';
 		  //'Número medio de comentarios por pregunta : '+(numeroPgtas/numeroComentarios)+' \n'+
-		  'Número de preguntas sin comentarios : '+pgtasSinComentarios+' \n'+	
-		  'Número de preguntas con comentarios : '+numeroPgtas-pgtasSinComentarios+' \n';	
-	res.render('statistics', {texto:texto,errors:[]}); 
+		  //'Número de preguntas sin comentarios : '+pgtasSinComentarios+' \n'+	
+		  //'Número de preguntas con comentarios : '+numeroPgtas-pgtasSinComentarios+' \n';	
+	res.render('statistics', {texto:mensaje,errors:[]}); 
 };
