@@ -10,6 +10,9 @@
     "https"
   ],
   "basePath": "/ehr",
+  "consumes": [
+    "multipart/form-data"
+  ],
   "produces": [
     "application/json"
   ],
@@ -28,7 +31,7 @@
           },
           {
             "name": "format",
-            "in": "body",
+            "in": "formData",
             "description": "descripcion de parametro format",
             "required": true,
             "type": "string",
@@ -36,21 +39,19 @@
           },
           {
             "name": "max",
-            "in": "body",
+            "in": "formData",
             "description": "descripcion de parametro max",
             "required": false,
             "type": "integer",
-            "format": "int32",
-            "default":null
+            "format": "int32"
           },
           {
             "name": "offset",
-            "in": "body",
+            "in": "formData",
             "description": "descripcion de parametro offset",
             "required": false,
             "type": "integer",
-            "format": "int32".
-            "default":null
+            "format": "int32"
           }
         ],
         "tags": [
