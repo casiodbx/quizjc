@@ -20,27 +20,37 @@
         "description": "Listado de pacientes",
         "parameters": [
           {
-            "name": "format",
-            "in": "query",
-            "description": "descripcion de parametro format",
+            "name": "Autorizathion",
+            "in": "header",
+            "description": "token to be passed as a header",
             "required": true,
             "type": "string"
           },
           {
-            "name": "max",
-            "in": "query",
-            "description": "descripcion de parametro max",
+            "name": "format",
+            "in": "body",
+            "description": "descripcion de parametro format",
             "required": true,
-            "type": "integer",
-            "format": "int32"
+            "type": "string",
+            "default":"json"
           },
           {
-            "name": "int",
-            "in": "query",
-            "description": "descripcion de parametro offset",
-            "required": true,
+            "name": "max",
+            "in": "body",
+            "description": "descripcion de parametro max",
+            "required": false,
             "type": "integer",
-            "format": "int32"
+            "format": "int32",
+            "default":null
+          },
+          {
+            "name": "offset",
+            "in": "body",
+            "description": "descripcion de parametro offset",
+            "required": false,
+            "type": "integer",
+            "format": "int32".
+            "default":null
           }
         ],
         "tags": [
