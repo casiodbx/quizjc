@@ -18,7 +18,7 @@
 "description": "token de seguridad",
 "required": false,
 "type": "string"
-,"default": "Authorization :eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZXh0cmFkYXRhIjp7Im9yZ2FuaXphdGlvbiI6IjEyMzQifSwiaXNzdWVkX2F0IjoiMjAxNi0wNC0wM1QxNDozNjo1NC4wMTVaIn0=.t8yOMY6oteRsYbMHWHRh7KI41tnZQVFstwKH9Sip7K8="},{"name": "format",
+,"default": "Authorization : Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZXh0cmFkYXRhIjp7Im9yZ2FuaXphdGlvbiI6IjEyMzQifSwiaXNzdWVkX2F0IjoiMjAxNi0wNC0wM1QxNDo0MjowMi42NDBaIn0=.tsVbt48D2K/p/F7gKpsXfByA5+tlXzCXTUBzmU3WUOY="},{"name": "format",
 "in": "query",
 "description": "descripcion de parametro format",
 "required": false,
@@ -56,7 +56,7 @@
 "description": "token de seguridad",
 "required": false,
 "type": "string"
-,"default": "Authorization :eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZXh0cmFkYXRhIjp7Im9yZ2FuaXphdGlvbiI6IjEyMzQifSwiaXNzdWVkX2F0IjoiMjAxNi0wNC0wM1QxNDozNjo1NC4wMTVaIn0=.t8yOMY6oteRsYbMHWHRh7KI41tnZQVFstwKH9Sip7K8="},{"name": "format",
+,"default": "Authorization : Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZXh0cmFkYXRhIjp7Im9yZ2FuaXphdGlvbiI6IjEyMzQifSwiaXNzdWVkX2F0IjoiMjAxNi0wNC0wM1QxNDo0MjowMi42NDBaIn0=.tsVbt48D2K/p/F7gKpsXfByA5+tlXzCXTUBzmU3WUOY="},{"name": "format",
 "in": "query",
 "description": "descripcion de parametro format",
 "required": false,
