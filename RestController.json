@@ -1,135 +1,99 @@
-{
-  "swagger": "2.0",
-  "info": {
-    "title": "EHRServer",
-    "description": "The composition of ranks is determined by a taxonomist. The standards for the classification are not strictly codified.",
-    "version": "0.0.1"
-  },
-  "host": "cabolabs-ehrserver.rhcloud.com",
-  "schemes": [
-    "https"
-  ],
-  "basePath": "/ehr",
-  "consumes": [
-    "multipart/form-data"
-  ],
-  "produces": [
-    "application/json"
-  ],
-  "paths": {
-    "/patientsList": {
-      "get": {
-        "summary": "Listado de pacientes",
-        "description": "Listado de pacientes",
-        "parameters": [
-          {
-            "name": "Autorizathion",
-            "in": "header",
-            "description": "token to be passed as a header",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "format",
-            "in": "formData",
-            "description": "descripcion de parametro format",
-            "required": true,
-            "type": "string",
-            "default":"json"
-          },
-          {
-            "name": "max",
-            "in": "formData",
-            "description": "descripcion de parametro max",
-            "required": false,
-            "type": "integer",
-            "format": "int32"
-          },
-          {
-            "name": "offset",
-            "in": "formData",
-            "description": "descripcion de parametro offset",
-            "required": false,
-            "type": "integer",
-            "format": "int32"
-          }
-        ],
-        "tags": [
-          "patients"
-        ],
-        "responses": {
-          "500": {
-            "description": "'$format' no reconocido, debe ser exactamente 'xml' o 'json'",
-            "schema": {
-              "type": "string"
-            }
-          },
-          "200": {
-            "description": "Listado de Pacientes",
-            "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/Person"
-              }
-            }
-          }
-        }
-      }
-    }
-  },
-  "definitions": {
-    "Person": {
-      "type": "object",
-      "properties": {
-        "firstName": {
-          "type": "string",
-          "description": "primer nombre."
-        },
-        "lastName": {
-          "type": "string",
-          "description": "segundo apellido."
-        },
-        "dob": {
-          "type": "string",
-          "format": "date",
-          "description": "fecha de nacimiento"
-        },
-        "sex": {
-          "type": "string",
-          "description": "M male, F female, U unknown."
-        },
-        "idCode": {
-          "type": "string",
-          "description": "Numero o codigo de documento local, regional o nacional."
-        },
-        "idType": {
-          "type": "string",
-          "description": "Tipo de documento"
-        },
-        "role": {
-          "type": "string",
-          "description": "Paciente o Medico"
-        },
-        "deleted": {
-          "type": "boolean",
-          "description": "logical delete"
-        }
-      }
-    },
-    "Error": {
-      "type": "object",
-      "properties": {
-        "code": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "message": {
-          "type": "string"
-        },
-        "fields": {
-          "type": "string"
-        }
-      }
-    }
-  }
+{"swagger":"2.0" 
+,"info":{
+ "title": "EHRServer",
+ "description": "Descripcion de la clas RestController",
+"version": "0.6"}
+,"host": "cabolabs-ehrserver.rhcloud.com"
+,"schemes": ["https"]
+,"basePath": "/ehr"
+,"produces": ["application/json"]
+,"paths": {
+"/rest/patients": {
+"get": {"summary": "Listado de pacientes",
+"description": "Listado de pacientes",
+"parameters": [
+{"name": "Authorization",
+"in": "header",
+"description": "token de seguridad",
+"required": false,
+"type": "string"
+,"default": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZXh0cmFkYXRhIjp7Im9yZ2FuaXphdGlvbiI6IjEyMzQifSwiaXNzdWVkX2F0IjoiMjAxNi0wNC0wM1QwODoxMjo1My4zMTJaIn0=.8IoDLpcxyTL+5qyUDm6SZOOSXzqLQ4Ty8h/J4shZb2o="},{"name": "format",
+"in": "query",
+"description": "descripcion de parametro format",
+"required": false,
+"type": "string"
+,"enum": ["xml","json"]},{"name": "max",
+"in": "query",
+"description": "descripcion de parametro max",
+"required": false,
+"type": "integer"
+,"format": "int32"},{"name": "offset",
+"in": "query",
+"description": "descripcion de parametro offset",
+"required": false,
+"type": "integer"
+,"format": "int32"}
+],"tags": ["patients"]
+,"responses": {
+"500": { 
+"description": "'$format' no reconocido, debe ser exactamente 'xml' o 'json'",
+"schema": {"type": "string"}
+},"200": { 
+"description": "Listado de Pacientes",
+"schema": {"type": "array",
+"items": {
+"$ref": "#/definitions/Person"
+}}
 }
+}}
+}},"definitions": {"Person": {
+"type": "object",
+"properties": {
+"firstName": {
+"type":"string"
+,
+"description":"primer nombre."
+},"lastName": {
+"type":"string"
+,
+"description":"segundo apellido."
+},"dob": {
+"type":"string"
+,"format":"date",
+"description":"fecha de nacimiento"
+},"sex": {
+"type":"string"
+,
+"description":"M male, F female, U unknown."
+},"idCode": {
+"type":"string"
+,
+"description":"Numero o codigo de documento local, regional o nacional."
+},"idType": {
+"type":"string"
+,
+"description":"Tipo de documento"
+},"role": {
+"type":"string"
+,
+"description":"Paciente o Medico"
+},"deleted": {
+"type":"boolean"
+,
+"description":"logical delete"
+}
+}},"Error": {
+"type": "object",
+"properties": {
+"code": {
+"type": "integer",
+"format": "int32"
+},
+"message": {
+"type": "string"}
+,
+"fields": {
+"type": "string"}
+
+}
+}}}
