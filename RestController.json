@@ -12,8 +12,8 @@
   "basePath": "/ehr",
   "tags": [
     {
-      "name": "autorizathion"
-    },
+      "name": "authorization"
+     },
     {
       "name": "patients"
     },
@@ -121,7 +121,7 @@
         ],
         "tags": [
           "authorization"
-        ],
+         ],
         "responses": {
           "500": {
             "description": "Authentication failed",
