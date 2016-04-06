@@ -12,6 +12,9 @@
   "basePath": "/ehr",
   "tags": [
     {
+      "name": "autorizathion"
+    },
+    {
       "name": "patients"
     },
     {
@@ -36,7 +39,7 @@
             "description": "token de seguridad",
             "required": false,
             "type": "string",
-            "default": " Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZXh0cmFkYXRhIjp7Im9yZ2FuaXphdGlvbiI6IjEyMzQifSwiaXNzdWVkX2F0IjoiMjAxNi0wNC0wNlQxNjoyNjozNS43MThaIn0=.e17SyjwLvTGogkoly/vGBUFUpk6cKMoeCOoFxT/+qKo="
+            "default": " Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZXh0cmFkYXRhIjp7Im9yZ2FuaXphdGlvbiI6IjEyMzQifSwiaXNzdWVkX2F0IjoiMjAxNi0wNC0wNlQxNjo1MToxNC4wMTJaIn0=.LRd0mqaN+n9UytKFHsuL3fB1Bf/k2kJoHvEC7z/EhYU="
           },
           {
             "name": "format",
@@ -88,6 +91,53 @@
         }
       }
     },
+    "/rest/login": {
+      "get": {
+        "summary": "Obtenemos token de seguridad",
+        "description": "Obtenemos token de seguridad",
+        "parameters": [
+          {
+            "name": "username",
+            "in": "query",
+            "description": "Usuario",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "password",
+            "in": "query",
+            "description": "Clave de acceso",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "organization",
+            "in": "query",
+            "description": "Numero de la organizacion, facilitado al registrarse en la aplicacion",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "tags": [
+          "authorization"
+        ],
+        "responses": {
+          "500": {
+            "description": "Authentication failed",
+            "schema": {
+              "type": "string"
+            }
+          },
+          "200": {
+            "description": "Token de seguridad",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
     "/rest/patients": {
       "get": {
         "summary": "Listado de pacientes",
@@ -99,7 +149,7 @@
             "description": "token de seguridad",
             "required": false,
             "type": "string",
-            "default": " Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZXh0cmFkYXRhIjp7Im9yZ2FuaXphdGlvbiI6IjEyMzQifSwiaXNzdWVkX2F0IjoiMjAxNi0wNC0wNlQxNjoyNjozNS43MThaIn0=.e17SyjwLvTGogkoly/vGBUFUpk6cKMoeCOoFxT/+qKo="
+            "default": " Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZXh0cmFkYXRhIjp7Im9yZ2FuaXphdGlvbiI6IjEyMzQifSwiaXNzdWVkX2F0IjoiMjAxNi0wNC0wNlQxNjo1MToxNC4wMTJaIn0=.LRd0mqaN+n9UytKFHsuL3fB1Bf/k2kJoHvEC7z/EhYU="
           },
           {
             "name": "format",
@@ -162,7 +212,7 @@
             "description": "token de seguridad",
             "required": false,
             "type": "string",
-            "default": " Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZXh0cmFkYXRhIjp7Im9yZ2FuaXphdGlvbiI6IjEyMzQifSwiaXNzdWVkX2F0IjoiMjAxNi0wNC0wNlQxNjoyNjozNS43MThaIn0=.e17SyjwLvTGogkoly/vGBUFUpk6cKMoeCOoFxT/+qKo="
+            "default": " Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZXh0cmFkYXRhIjp7Im9yZ2FuaXphdGlvbiI6IjEyMzQifSwiaXNzdWVkX2F0IjoiMjAxNi0wNC0wNlQxNjo1MToxNC4wMTJaIn0=.LRd0mqaN+n9UytKFHsuL3fB1Bf/k2kJoHvEC7z/EhYU="
           },
           {
             "name": "format",
@@ -253,6 +303,44 @@
         "organizationUid": {
           "type": "string",
           "description": "organizationUid"
+        }
+      }
+    },
+    "Person": {
+      "type": "object",
+      "properties": {
+        "firstName": {
+          "type": "string",
+          "description": "primer nombre."
+        },
+        "lastName": {
+          "type": "string",
+          "description": "segundo apellido."
+        },
+        "dob": {
+          "type": "string",
+          "format": "date",
+          "description": "fecha de nacimiento"
+        },
+        "sex": {
+          "type": "string",
+          "description": "M male, F female, U unknown."
+        },
+        "idCode": {
+          "type": "string",
+          "description": "Numero o codigo de documento local, regional o nacional."
+        },
+        "idType": {
+          "type": "string",
+          "description": "Tipo de documento"
+        },
+        "role": {
+          "type": "string",
+          "description": "Paciente o Medico"
+        },
+        "deleted": {
+          "type": "boolean",
+          "description": "logical delete"
         }
       }
     },
