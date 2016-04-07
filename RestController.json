@@ -193,42 +193,6 @@
 ,
 "description":"logical delete"
 }
-}},"Person": {
-"type": "object",
-"properties": {
-"firstName": {
-"type":"string"
-,
-"description":"primer nombre."
-},"lastName": {
-"type":"string"
-,
-"description":"segundo apellido."
-},"dob": {
-"type":"string"
-,"format":"date",
-"description":"fecha de nacimiento"
-},"sex": {
-"type":"string"
-,
-"description":"M male, F female, U unknown."
-},"idCode": {
-"type":"string"
-,
-"description":"Numero o codigo de documento local, regional o nacional."
-},"idType": {
-"type":"string"
-,
-"description":"Tipo de documento"
-},"role": {
-"type":"string"
-,
-"description":"Paciente o Medico"
-},"deleted": {
-"type":"boolean"
-,
-"description":"logical delete"
-}
 }},"Query": {
 "type": "object",
 "properties": {
