@@ -18,7 +18,7 @@
 "description": "token de seguridad",
 "required": false,
 "type": "string"
-,"default": " Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZXh0cmFkYXRhIjp7Im9yZ2FuaXphdGlvbiI6IjEyMzQifSwiaXNzdWVkX2F0IjoiMjAxNi0wNC0wN1QxMzo0MDowMS43MThaIn0=.mWf4FvuCwMcVbj1jiLShqb6AejpfoxpNTg8ZkICTji8="},{"name": "format",
+,"default": " Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZXh0cmFkYXRhIjp7Im9yZ2FuaXphdGlvbiI6IjEyMzQifSwiaXNzdWVkX2F0IjoiMjAxNi0wNC0wN1QxMzo0NzowMS4zNTlaIn0=.mqp0m0X2K+2T6M4hSlfV7XA2NGFIboIjtmK7eclpgJg="},{"name": "format",
 "in": "query",
 "description": "descripcion de parametro format",
 "required": false,
@@ -56,7 +56,7 @@
 "description": "token de seguridad",
 "required": false,
 "type": "string"
-,"default": " Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZXh0cmFkYXRhIjp7Im9yZ2FuaXphdGlvbiI6IjEyMzQifSwiaXNzdWVkX2F0IjoiMjAxNi0wNC0wN1QxMzo0MDowMS43MThaIn0=.mWf4FvuCwMcVbj1jiLShqb6AejpfoxpNTg8ZkICTji8="},{"name": "format",
+,"default": " Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZXh0cmFkYXRhIjp7Im9yZ2FuaXphdGlvbiI6IjEyMzQifSwiaXNzdWVkX2F0IjoiMjAxNi0wNC0wN1QxMzo0NzowMS4zNTlaIn0=.mqp0m0X2K+2T6M4hSlfV7XA2NGFIboIjtmK7eclpgJg="},{"name": "format",
 "in": "query",
 "description": "descripcion de parametro format",
 "required": false,
@@ -94,7 +94,7 @@
 "description": "token de seguridad",
 "required": false,
 "type": "string"
-,"default": " Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZXh0cmFkYXRhIjp7Im9yZ2FuaXphdGlvbiI6IjEyMzQifSwiaXNzdWVkX2F0IjoiMjAxNi0wNC0wN1QxMzo0MDowMS43MThaIn0=.mWf4FvuCwMcVbj1jiLShqb6AejpfoxpNTg8ZkICTji8="},{"name": "format",
+,"default": " Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZXh0cmFkYXRhIjp7Im9yZ2FuaXphdGlvbiI6IjEyMzQifSwiaXNzdWVkX2F0IjoiMjAxNi0wNC0wN1QxMzo0NzowMS4zNTlaIn0=.mqp0m0X2K+2T6M4hSlfV7XA2NGFIboIjtmK7eclpgJg="},{"name": "format",
 "in": "query",
 "description": "descripcion de parametro format",
 "required": false,
@@ -156,42 +156,6 @@
 "type":"string"
 ,
 "description":"organizationUid"
-}
-}},"Person": {
-"type": "object",
-"properties": {
-"firstName": {
-"type":"string"
-,
-"description":"primer nombre."
-},"lastName": {
-"type":"string"
-,
-"description":"segundo apellido."
-},"dob": {
-"type":"string"
-,"format":"date",
-"description":"fecha de nacimiento"
-},"sex": {
-"type":"string"
-,
-"description":"M male, F female, U unknown."
-},"idCode": {
-"type":"string"
-,
-"description":"Numero o codigo de documento local, regional o nacional."
-},"idType": {
-"type":"string"
-,
-"description":"Tipo de documento"
-},"role": {
-"type":"string"
-,
-"description":"Paciente o Medico"
-},"deleted": {
-"type":"boolean"
-,
-"description":"logical delete"
 }
 }},"Person": {
 "type": "object",
