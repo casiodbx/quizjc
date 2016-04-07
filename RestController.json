@@ -18,7 +18,7 @@
 "description": "token de seguridad",
 "required": false,
 "type": "string"
-,"default": " Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZXh0cmFkYXRhIjp7Im9yZ2FuaXphdGlvbiI6IjEyMzQifSwiaXNzdWVkX2F0IjoiMjAxNi0wNC0wNlQxNjo1Njo1OC41MjdaIn0=.6yM6ZqTa0F+jjl7+B80KnzXM5Mh91QsyobYIatDvJzM="},{"name": "format",
+,"default": " Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZXh0cmFkYXRhIjp7Im9yZ2FuaXphdGlvbiI6IjEyMzQifSwiaXNzdWVkX2F0IjoiMjAxNi0wNC0wN1QxMzo0MDowMS43MThaIn0=.mWf4FvuCwMcVbj1jiLShqb6AejpfoxpNTg8ZkICTji8="},{"name": "format",
 "in": "query",
 "description": "descripcion de parametro format",
 "required": false,
@@ -86,7 +86,7 @@
 "description": "token de seguridad",
 "required": false,
 "type": "string"
-,"default": " Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZXh0cmFkYXRhIjp7Im9yZ2FuaXphdGlvbiI6IjEyMzQifSwiaXNzdWVkX2F0IjoiMjAxNi0wNC0wNlQxNjo1Njo1OC41MjdaIn0=.6yM6ZqTa0F+jjl7+B80KnzXM5Mh91QsyobYIatDvJzM="},{"name": "format",
+,"default": " Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZXh0cmFkYXRhIjp7Im9yZ2FuaXphdGlvbiI6IjEyMzQifSwiaXNzdWVkX2F0IjoiMjAxNi0wNC0wN1QxMzo0MDowMS43MThaIn0=.mWf4FvuCwMcVbj1jiLShqb6AejpfoxpNTg8ZkICTji8="},{"name": "format",
 "in": "query",
 "description": "descripcion de parametro format",
 "required": false,
@@ -124,7 +124,7 @@
 "description": "token de seguridad",
 "required": false,
 "type": "string"
-,"default": " Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZXh0cmFkYXRhIjp7Im9yZ2FuaXphdGlvbiI6IjEyMzQifSwiaXNzdWVkX2F0IjoiMjAxNi0wNC0wNlQxNjo1Njo1OC41MjdaIn0=.6yM6ZqTa0F+jjl7+B80KnzXM5Mh91QsyobYIatDvJzM="},{"name": "format",
+,"default": " Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZXh0cmFkYXRhIjp7Im9yZ2FuaXphdGlvbiI6IjEyMzQifSwiaXNzdWVkX2F0IjoiMjAxNi0wNC0wN1QxMzo0MDowMS43MThaIn0=.mWf4FvuCwMcVbj1jiLShqb6AejpfoxpNTg8ZkICTji8="},{"name": "format",
 "in": "query",
 "description": "descripcion de parametro format",
 "required": false,
