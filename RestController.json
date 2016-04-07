@@ -51,17 +51,7 @@
 "get": {"summary": "Obtenemos token de seguridad",
 "description": "Obtenemos token de seguridad",
 "parameters": [
-{"name": "username",
-"in": "query",
-"description": "Usuario",
-"required": true,
-"type": "string"
-},{"name": "password",
-"in": "query",
-"description": "Clave de acceso",
-"required": true,
-"type": "string"
-},{"name": "organization",
+{"name": "organization",
 "in": "query",
 "description": "Numero de la organizacion, facilitado al registrarse en la aplicacion",
 "required": true,
