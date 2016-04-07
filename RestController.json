@@ -47,6 +47,36 @@
 }}
 }
 }}
+},"/rest/login": {
+"get": {"summary": "Obtenemos token de seguridad",
+"description": "Obtenemos token de seguridad",
+"parameters": [
+{"name": "username",
+"in": "query",
+"description": "Usuario",
+"required": true,
+"type": "string"
+},{"name": "password",
+"in": "query",
+"description": "Clave de acceso",
+"required": true,
+"type": "string"
+},{"name": "organization",
+"in": "query",
+"description": "Numero de la organizacion, facilitado al registrarse en la aplicacion",
+"required": true,
+"type": "integer"
+,"format": "int32"}
+],"tags": ["authorization"]
+,"responses": {
+"500": { 
+"description": "Authentication failed",
+"schema": {"type": "string"}
+},"200": { 
+"description": "Token de seguridad",
+"schema": {"type": "string"}
+}
+}}
 },"/rest/patients": {
 "get": {"summary": "Listado de pacientes",
 "description": "Listado de pacientes",
