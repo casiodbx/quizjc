@@ -18,7 +18,7 @@
 "description": "token de seguridad",
 "required": false,
 "type": "string"
-,"default": " Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZXh0cmFkYXRhIjp7Im9yZ2FuaXphdGlvbiI6IjEyMzQifSwiaXNzdWVkX2F0IjoiMjAxNi0wNC0wN1QxNDoxODo1OC44NzVaIn0=.LSYT/MPo2aKmWLYDCyLhUcAYW1MmWfuSgfOvULZC2+w="},{"name": "format",
+,"default": " Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZXh0cmFkYXRhIjp7Im9yZ2FuaXphdGlvbiI6IjEyMzQifSwiaXNzdWVkX2F0IjoiMjAxNi0wNC0wN1QxNTo0ODoxMy41NjJaIn0=.JbDTK1QM+EGsqii17qKUAlfQKAXqPmlGJzfQPXxSKB8="},{"name": "format",
 "in": "query",
 "description": "descripcion de parametro format",
 "required": false,
@@ -86,7 +86,7 @@
 "description": "token de seguridad",
 "required": false,
 "type": "string"
-,"default": " Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZXh0cmFkYXRhIjp7Im9yZ2FuaXphdGlvbiI6IjEyMzQifSwiaXNzdWVkX2F0IjoiMjAxNi0wNC0wN1QxNDoxODo1OC44NzVaIn0=.LSYT/MPo2aKmWLYDCyLhUcAYW1MmWfuSgfOvULZC2+w="},{"name": "format",
+,"default": " Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZXh0cmFkYXRhIjp7Im9yZ2FuaXphdGlvbiI6IjEyMzQifSwiaXNzdWVkX2F0IjoiMjAxNi0wNC0wN1QxNTo0ODoxMy41NjJaIn0=.JbDTK1QM+EGsqii17qKUAlfQKAXqPmlGJzfQPXxSKB8="},{"name": "format",
 "in": "query",
 "description": "descripcion de parametro format",
 "required": false,
@@ -124,7 +124,7 @@
 "description": "token de seguridad",
 "required": false,
 "type": "string"
-,"default": " Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZXh0cmFkYXRhIjp7Im9yZ2FuaXphdGlvbiI6IjEyMzQifSwiaXNzdWVkX2F0IjoiMjAxNi0wNC0wN1QxNDoxODo1OC44NzVaIn0=.LSYT/MPo2aKmWLYDCyLhUcAYW1MmWfuSgfOvULZC2+w="},{"name": "format",
+,"default": " Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZXh0cmFkYXRhIjp7Im9yZ2FuaXphdGlvbiI6IjEyMzQifSwiaXNzdWVkX2F0IjoiMjAxNi0wNC0wN1QxNTo0ODoxMy41NjJaIn0=.JbDTK1QM+EGsqii17qKUAlfQKAXqPmlGJzfQPXxSKB8="},{"name": "format",
 "in": "query",
 "description": "descripcion de parametro format",
 "required": false,
@@ -250,10 +250,6 @@
 "type":"string"
 ,
 "description":"Si la consulta es de compositions, se filtra por indices de nivel 1 y tambien por nivel 2 (para n2 se usa DataCriteria). Los filtros/criterios de n1 y de n2 son parametros de la query."
-},"group": {
-"type":"string"
-,
-"description":"Sirve para agrupar datos. Posibles valores(null, composition o path): composition: sirve para mostrar tablas, donde cada fila es una composition, path: sirve para armar series de valores para graficar"
 }
 }},"Error": {
 "type": "object",
