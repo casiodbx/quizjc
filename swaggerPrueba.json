@@ -15,9 +15,7 @@
       "in": "header",
     }
   }
-,"security": [
-  {"authorization": []}
-],"paths": {
+,"paths": {
 "/rest/ehrs": {
 "get": {"summary": "Listado de pacientes",
 "description": "Listado de historiales medicos",
