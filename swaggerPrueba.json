@@ -8,13 +8,6 @@
 ,"basePath": "/ehr"
 ,"tags": [{"name":"authorization"},{"name":"patients"},{"name":"ehrs"},{"name":"queries"}]
 ,"produces": ["application/json"]
-,"securityDefinitions": {
-  "authorization": {
-      "type": "apiKey",
-      "name": "authorization",
-      "in": "header",
-    }
-  }
 ,"paths": {
 "/rest/ehrs": {
 "get": {"summary": "Listado de pacientes",
