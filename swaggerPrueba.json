@@ -12,10 +12,10 @@
     "authorization": {
       "type": "apiKey",
       "in": "header",
-      "name": "api_key"
+      "name": "authorization"
     }
   }
-,"security":[
+,"security": [
   {"authorization": []}
 ],"paths": {
 "/rest/ehrs": {
