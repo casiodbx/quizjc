@@ -15,7 +15,7 @@
       "name": "api_key"
     }
   }
-,"security": [
+,"security":[
   {"api_key": []}
 ],"paths": {
 "/rest/ehrs": {
