@@ -9,23 +9,25 @@
 ,"tags": [{"name":"authorization"},{"name":"patients"},{"name":"ehrs"},{"name":"queries"}]
 ,"produces": ["application/json"]
 ,"securityDefinitions": {
-    "authorization": {
-      "type": "oauth2",
-      "flow": "password",
-      "tokenUrl": "https://cabolabs-ehrserver.rhcloud.com/ehr",
-      "scopes": {
-        "default": "Default scope" 
-      }
+  "authorization": {
+      "type": "apiKey",
+      "name": "authorization",
+      "in": "header",
     }
   }
-,security: [
-  {"authorization": ["default"]}
+,"security": [
+  {"authorization": []}
 ],"paths": {
 "/rest/ehrs": {
 "get": {"summary": "Listado de pacientes",
 "description": "Listado de historiales medicos",
 "parameters": [
-{"name": "format",
+{"name": "Authorization",
+"in": "header",
+"description": "token de seguridad",
+"required": false,
+"type": "string"
+,"default": " Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZXh0cmFkYXRhIjp7Im9yZ2FuaXphdGlvbiI6IjEyMzQifSwiaXNzdWVkX2F0IjoiMjAxNi0wNC0wN1QxNTo0ODoxMy41NjJaIn0=.JbDTK1QM+EGsqii17qKUAlfQKAXqPmlGJzfQPXxSKB8="},{"name": "format",
 "in": "query",
 "description": "descripcion de parametro format",
 "required": false,
