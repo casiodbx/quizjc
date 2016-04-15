@@ -16,7 +16,7 @@
     }
   }
 ,"security": [
-  {"authorization": []}
+  {"api_key": []}
 ],"paths": {
 "/rest/ehrs": {
 "get": {"summary": "Listado de pacientes",
