@@ -11,8 +11,8 @@
 ,"securityDefinitions":{
     "authorization": {
     "type": "oauth2",
-    "authorizationUrl": "https://cabolabs-ehrserver.rhcloud.com/ehr",
-    "flow": "application",
+    "tokenUrl":"https://cabolabs-ehrserver.rhcloud.com/ehr/rest/login?username=jcalvarezhorus&password=JUANJI&organization=329209",
+    "flow": "password",
     "scopes": { "default": "Default scope"  }
   }
 }
