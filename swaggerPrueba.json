@@ -11,7 +11,7 @@
 ,"securityDefinitions": {
     "authorization": {
     "type": "oauth2",
-    "authorizationUrl": "http://swagger.io/api/oauth/dialog",
+    "authorizationUrl": "https://cabolabs-ehrserver.rhcloud.com/ehr",
     "flow": "implicit",
     "scopes": { "default": "Default scope"  }
   }
