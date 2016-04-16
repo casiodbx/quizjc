@@ -13,11 +13,11 @@
     "type": "oauth2",
     "authorizationUrl": "http://swagger.io/api/oauth/dialog",
     "flow": "implicit",
-    "scopes": { }
+    "scopes": { "default": "Default scope"  }
   }
 }
 ,"security": [
-  {"authorization": []}
+  {"authorization": ["default"]}
 ],"paths": {
 "/rest/ehrs": {
 "get": {"summary": "Listado de pacientes",
