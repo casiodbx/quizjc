@@ -12,7 +12,7 @@
     "authorization": {
     "type": "oauth2",
     "authorizationUrl": "https://cabolabs-ehrserver.rhcloud.com/ehr",
-    "flow": "implicit",
+    "flow": "application",
     "scopes": { "default": "Default scope"  }
   }
 }
