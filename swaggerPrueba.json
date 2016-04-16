@@ -10,11 +10,12 @@
 ,"produces": ["application/json"]
 ,"securityDefinitions": {
     "authorization": {
-      "type": "apiKey",
-      "in": "header",
-      "name": "authorization"
-    }
+    "type": "oauth2",
+    "authorizationUrl": "http://swagger.io/api/oauth/dialog",
+    "flow": "implicit",
+    "scopes": { }
   }
+}
 ,"security": [
   {"authorization": []}
 ],"paths": {
