@@ -1,0 +1,338 @@
+{"swagger":"2.0" 
+,"info":{
+ "title": "EHRServer",
+ "description": "Descripcion de la clase RestController",
+"version": "0.6"}
+,"host": "cabolabs-ehrserver.rhcloud.com"
+,"schemes": ["https"]
+,"basePath": "/ehr"
+,"tags": [{"name":"authorization"},{"name":"patients"},{"name":"ehrs"},{"name":"queries"}]
+,"produces": ["application/json"]
+,"paths": {
+"/rest/patient": {
+"post": {"summary": "Crear un paciente",
+"description": "Creación de un paciente",
+"parameters": [
+{"name": "Authorization",
+"in": "header",
+"description": "token de seguridad",
+"required": true,
+"type": "string"
+,"default": " Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZXh0cmFkYXRhIjp7Im9yZ2FuaXphdGlvbiI6IjEyMzQifSwiaXNzdWVkX2F0IjoiMjAxNi0wNi0xMFQxNzoyMDo0My43MDNaIn0=.3NPdJ7lvZKskPOIChIkHBYtOEVcK4jk3aE8tVwSujnY="},{"name": "firstName",
+"in": "query",
+"description": "descripcion de parametro firstName",
+"required": true,
+"type": "string"
+},{"name": "lastName",
+"in": "query",
+"description": "descripcion de parametro lastName",
+"required": true,
+"type": "string"
+},{"name": "dob",
+"in": "query",
+"description": "descripcion de parametro dob",
+"required": true,
+"type": "string"
+},{"name": "sex",
+"in": "query",
+"description": "descripcion de parametro sex",
+"required": true,
+"type": "string"
+},{"name": "idCode",
+"in": "query",
+"description": "descripcion de parametro idCode",
+"required": true,
+"type": "string"
+},{"name": "idType",
+"in": "query",
+"description": "descripcion de parametro idType",
+"required": true,
+"type": "string"
+},{"name": "role",
+"in": "query",
+"description": "descripcion de parametro role",
+"required": true,
+"type": "string"
+},{"name": "organizationUid",
+"in": "query",
+"description": "descripcion de parametro organizationUid",
+"required": true,
+"type": "string"
+},{"name": "createEhr",
+"in": "query",
+"description": "descripcion de parametro createEhr",
+"required": true,
+"type": "boolean"
+},{"name": "format",
+"in": "query",
+"description": "descripcion de parametro format",
+"required": false,
+"type": "string"
+,"enum": ["xml","json"]}
+],"tags": ["patients"]
+,"responses": {
+"500": { 
+"description": "Formato no reconocido, debe ser exactamente 'xml' o 'json'",
+"schema": {"type": "string"}
+},"200": { 
+"description": "Paciente creado con exito.",
+"schema": {"$ref": "#/definitions/Person"}
+}
+}}
+},"/rest/ehrs": {
+"get": {"summary": "Listado de pacientes",
+"description": "Listado de historiales medicos",
+"parameters": [
+{"name": "Authorization",
+"in": "header",
+"description": "token de seguridad",
+"required": false,
+"type": "string"
+,"default": " Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZXh0cmFkYXRhIjp7Im9yZ2FuaXphdGlvbiI6IjEyMzQifSwiaXNzdWVkX2F0IjoiMjAxNi0wNi0xMFQxNzoyMDo0My43MDNaIn0=.3NPdJ7lvZKskPOIChIkHBYtOEVcK4jk3aE8tVwSujnY="},{"name": "format",
+"in": "query",
+"description": "descripcion de parametro format",
+"required": false,
+"type": "string"
+,"enum": ["xml","json"]},{"name": "max",
+"in": "query",
+"description": "descripcion de parametro max",
+"required": false,
+"type": "integer"
+,"format": "int32"},{"name": "offset",
+"in": "query",
+"description": "descripcion de parametro offset",
+"required": false,
+"type": "integer"
+,"format": "int32"}
+],"tags": ["ehrs"]
+,"responses": {
+"500": { 
+"description": "Formato no reconocido, debe ser exactamente 'xml' o 'json'",
+"schema": {"type": "string"}
+},"200": { 
+"description": "Listado de historiales de pacientes",
+"schema": {"type": "array",
+"items": {
+"$ref": "#/definitions/Ehr"
+}}
+}
+}}
+},"/rest/login": {
+"get": {"summary": "Obtenemos token de seguridad",
+"description": "Obtenemos token de seguridad",
+"parameters": [
+{"name": "username",
+"in": "query",
+"description": "Usuario",
+"required": true,
+"type": "string"
+},{"name": "password",
+"in": "query",
+"description": "Clave de acceso",
+"required": true,
+"type": "string"
+},{"name": "organization",
+"in": "query",
+"description": "Numero de la organizacion, facilitado al registrarse en la aplicacion",
+"required": true,
+"type": "integer"
+,"format": "int32"}
+],"tags": ["authorization"]
+,"responses": {
+"500": { 
+"description": "Authentication failed",
+"schema": {"type": "string"}
+},"200": { 
+"description": "Token de seguridad",
+"schema": {"type": "string"}
+}
+}}
+},"/rest/patients": {
+"get": {"summary": "Listado de pacientes",
+"description": "Listado de pacientes",
+"parameters": [
+{"name": "Authorization",
+"in": "header",
+"description": "token de seguridad",
+"required": false,
+"type": "string"
+,"default": " Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZXh0cmFkYXRhIjp7Im9yZ2FuaXphdGlvbiI6IjEyMzQifSwiaXNzdWVkX2F0IjoiMjAxNi0wNi0xMFQxNzoyMDo0My43MDNaIn0=.3NPdJ7lvZKskPOIChIkHBYtOEVcK4jk3aE8tVwSujnY="},{"name": "format",
+"in": "query",
+"description": "descripcion de parametro format",
+"required": false,
+"type": "string"
+,"enum": ["xml","json"]},{"name": "max",
+"in": "query",
+"description": "descripcion de parametro max",
+"required": false,
+"type": "integer"
+,"format": "int32"},{"name": "offset",
+"in": "query",
+"description": "descripcion de parametro offset",
+"required": false,
+"type": "integer"
+,"format": "int32"}
+],"tags": ["patients"]
+,"responses": {
+"500": { 
+"description": "Formato no reconocido, debe ser exactamente 'xml' o 'json'",
+"schema": {"type": "string"}
+},"200": { 
+"description": "Listado de Pacientes",
+"schema": {"type": "array",
+"items": {
+"$ref": "#/definitions/Person"
+}}
+}
+}}
+},"/rest/queries": {
+"get": {"summary": "Listado de queries",
+"description": "Listado de queries",
+"parameters": [
+{"name": "Authorization",
+"in": "header",
+"description": "token de seguridad",
+"required": false,
+"type": "string"
+,"default": " Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZXh0cmFkYXRhIjp7Im9yZ2FuaXphdGlvbiI6IjEyMzQifSwiaXNzdWVkX2F0IjoiMjAxNi0wNi0xMFQxNzoyMDo0My43MDNaIn0=.3NPdJ7lvZKskPOIChIkHBYtOEVcK4jk3aE8tVwSujnY="},{"name": "format",
+"in": "query",
+"description": "descripcion de parametro format",
+"required": false,
+"type": "string"
+,"enum": ["xml","json"]},{"name": "queryName",
+"in": "query",
+"description": "descripcion de parametro queryName",
+"required": false,
+"type": "string"
+},{"name": "descriptionContains",
+"in": "query",
+"description": "descripcion de parametro descriptionContains",
+"required": false,
+"type": "string"
+},{"name": "max",
+"in": "query",
+"description": "descripcion de parametro max",
+"required": false,
+"type": "integer"
+,"format": "int32"},{"name": "offset",
+"in": "query",
+"description": "descripcion de parametro offset",
+"required": false,
+"type": "integer"
+,"format": "int32"}
+],"tags": ["queries"]
+,"responses": {
+"500": { 
+"description": "Formato no reconocido, debe ser exactamente 'xml' o 'json'",
+"schema": {"type": "string"}
+},"200": { 
+"description": "Listado de queries",
+"schema": {"type": "array",
+"items": {
+"$ref": "#/definitions/Query"
+}}
+}
+}}
+}},"definitions": {"Person": {
+"type": "object",
+"properties": {
+"firstName": {
+"type":"string"
+,
+"description":"primer nombre."
+},"lastName": {
+"type":"string"
+,
+"description":"segundo apellido."
+},"dob": {
+"type":"string"
+,"format":"date",
+"description":"fecha de nacimiento"
+},"sex": {
+"type":"string"
+,
+"description":"M male, F female, U unknown."
+},"idCode": {
+"type":"string"
+,
+"description":"Numero o codigo de documento local, regional o nacional."
+},"idType": {
+"type":"string"
+,
+"description":"Tipo de documento"
+},"role": {
+"type":"string"
+,
+"description":"Paciente o Medico"
+},"deleted": {
+"type":"boolean"
+,
+"description":"logical delete"
+}
+}},"Ehr": {
+"type": "object",
+"properties": {
+"systemId": {
+"type":"string"
+,
+"description":"The id of the EHR system on which this EHR was created"
+},"uid": {
+"type":"string"
+,
+"description":"Emula un HIER_OBJECT_ID.root y su valor va a ser un UUID (java.util.UUID.randomUUID() as String) que se asigna en el momento que se crea el EHR"
+},"dateCreated": {
+"type":"string"
+,"format":"date",
+"description":"Emula timeCreated, se setea automaticamente por Grails en el momento de crear el EHR"
+},"subject": {
+"type":"string"
+,
+"description":"Emula EHR.ehr_status...<OBJECT_REF>...subject"
+},"organizationUid": {
+"type":"string"
+,
+"description":"organizationUid"
+}
+}},"Query": {
+"type": "object",
+"properties": {
+"uid": {
+"type":"string"
+,
+"description":"Identifica la query de manera univoca"
+},"name": {
+"type":"string"
+,
+"description":"Describe lo que hace la query"
+},"type": {
+"type":"string"
+,
+"description":"Indica el tipo de la query"
+},"format": {
+"type":"string"
+,
+"description":"Indica el formato de la query. Sino se especifica, por defecto es xml"
+},"select": {
+"type":"string"
+,
+"description":"Si la consulta es de datos, se filtra por indices de nivel 1 y se usa DataGet para especificar que datos se quieren en el resultado."
+},"where": {
+"type":"string"
+,
+"description":"Si la consulta es de compositions, se filtra por indices de nivel 1 y tambien por nivel 2 (para n2 se usa DataCriteria). Los filtros/criterios de n1 y de n2 son parametros de la query."
+}
+}},"Error": {
+"type": "object",
+"properties": {
+"code": {
+"type": "integer",
+"format": "int32"
+},
+"message": {
+"type": "string"}
+,
+"fields": {
+"type": "string"}
+
+}
+}}}
