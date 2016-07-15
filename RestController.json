@@ -9,7 +9,77 @@
 ,"tags": [{"name":"authorization"},{"name":"patients"},{"name":"ehrs"},{"name":"queries"}]
 ,"produces": ["application/json"]
 ,"paths": {
-"/rest/ehrs": {
+"/rest/patient": {
+"post": {"summary": "Crear un paciente",
+"description": "Creación de un paciente",
+"parameters": [
+{"name": "Authorization",
+"in": "header",
+"description": "token de seguridad",
+"required": true,
+"type": "string"
+,"default": " Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpjYWx2YXJlemhvcnVzIiwiZXh0cmFkYXRhIjp7Im9yZ2FuaXphdGlvbiI6IjMyOTIwOSJ9LCJpc3N1ZWRfYXQiOiIyMDE2LTA3LTE1VDEyOjM5OjExLjAzOC0wNDowMCJ9.iHgNQuZeoa6rzN2XSlhGFGF9p+f+9tgj00DquND0Qzs="},{"name": "firstName",
+"in": "query",
+"description": "descripcion de parametro firstName",
+"required": true,
+"type": "string"
+},{"name": "lastName",
+"in": "query",
+"description": "descripcion de parametro lastName",
+"required": true,
+"type": "string"
+},{"name": "dob",
+"in": "query",
+"description": "descripcion de parametro dob",
+"required": true,
+"type": "string"
+},{"name": "sex",
+"in": "query",
+"description": "descripcion de parametro sex",
+"required": true,
+"type": "string"
+},{"name": "idCode",
+"in": "query",
+"description": "descripcion de parametro idCode",
+"required": true,
+"type": "string"
+},{"name": "idType",
+"in": "query",
+"description": "descripcion de parametro idType",
+"required": true,
+"type": "string"
+},{"name": "role",
+"in": "query",
+"description": "descripcion de parametro role",
+"required": true,
+"type": "string"
+},{"name": "organizationUid",
+"in": "query",
+"description": "descripcion de parametro organizationUid",
+"required": true,
+"type": "string"
+},{"name": "createEhr",
+"in": "query",
+"description": "descripcion de parametro createEhr",
+"required": true,
+"type": "boolean"
+},{"name": "format",
+"in": "query",
+"description": "descripcion de parametro format",
+"required": false,
+"type": "string"
+,"enum": ["xml","json"]}
+],"tags": ["patients"]
+,"responses": {
+"500": { 
+"description": "Formato no reconocido, debe ser exactamente 'xml' o 'json'",
+"schema": {"type": "string"}
+},"200": { 
+"description": "Paciente creado con exito.",
+"schema": {"$ref": "#/definitions/Person"}
+}
+}}
+},"/rest/ehrs": {
 "get": {"summary": "Listado de pacientes",
 "description": "Listado de historiales medicos",
 "parameters": [
@@ -18,7 +88,7 @@
 "description": "token de seguridad",
 "required": false,
 "type": "string"
-,"default": " Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZXh0cmFkYXRhIjp7Im9yZ2FuaXphdGlvbiI6IjEyMzQifSwiaXNzdWVkX2F0IjoiMjAxNi0wNC0wN1QxNTo0ODoxMy41NjJaIn0=.JbDTK1QM+EGsqii17qKUAlfQKAXqPmlGJzfQPXxSKB8="},{"name": "format",
+,"default": " Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpjYWx2YXJlemhvcnVzIiwiZXh0cmFkYXRhIjp7Im9yZ2FuaXphdGlvbiI6IjMyOTIwOSJ9LCJpc3N1ZWRfYXQiOiIyMDE2LTA3LTE1VDEyOjM5OjExLjAzOC0wNDowMCJ9.iHgNQuZeoa6rzN2XSlhGFGF9p+f+9tgj00DquND0Qzs="},{"name": "format",
 "in": "query",
 "description": "descripcion de parametro format",
 "required": false,
@@ -48,7 +118,7 @@
 }
 }}
 },"/rest/login": {
-"get": {"summary": "Obtenemos token de seguridad",
+"post": {"summary": "Obtenemos token de seguridad",
 "description": "Obtenemos token de seguridad",
 "parameters": [
 {"name": "username",
@@ -86,7 +156,7 @@
 "description": "token de seguridad",
 "required": false,
 "type": "string"
-,"default": " Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZXh0cmFkYXRhIjp7Im9yZ2FuaXphdGlvbiI6IjEyMzQifSwiaXNzdWVkX2F0IjoiMjAxNi0wNC0wN1QxNTo0ODoxMy41NjJaIn0=.JbDTK1QM+EGsqii17qKUAlfQKAXqPmlGJzfQPXxSKB8="},{"name": "format",
+,"default": " Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpjYWx2YXJlemhvcnVzIiwiZXh0cmFkYXRhIjp7Im9yZ2FuaXphdGlvbiI6IjMyOTIwOSJ9LCJpc3N1ZWRfYXQiOiIyMDE2LTA3LTE1VDEyOjM5OjExLjAzOC0wNDowMCJ9.iHgNQuZeoa6rzN2XSlhGFGF9p+f+9tgj00DquND0Qzs="},{"name": "format",
 "in": "query",
 "description": "descripcion de parametro format",
 "required": false,
@@ -124,7 +194,7 @@
 "description": "token de seguridad",
 "required": false,
 "type": "string"
-,"default": " Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZXh0cmFkYXRhIjp7Im9yZ2FuaXphdGlvbiI6IjEyMzQifSwiaXNzdWVkX2F0IjoiMjAxNi0wNC0wN1QxNTo0ODoxMy41NjJaIn0=.JbDTK1QM+EGsqii17qKUAlfQKAXqPmlGJzfQPXxSKB8="},{"name": "format",
+,"default": " Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpjYWx2YXJlemhvcnVzIiwiZXh0cmFkYXRhIjp7Im9yZ2FuaXphdGlvbiI6IjMyOTIwOSJ9LCJpc3N1ZWRfYXQiOiIyMDE2LTA3LTE1VDEyOjM5OjExLjAzOC0wNDowMCJ9.iHgNQuZeoa6rzN2XSlhGFGF9p+f+9tgj00DquND0Qzs="},{"name": "format",
 "in": "query",
 "description": "descripcion de parametro format",
 "required": false,
@@ -163,31 +233,7 @@
 }}
 }
 }}
-}},"definitions": {"Ehr": {
-"type": "object",
-"properties": {
-"systemId": {
-"type":"string"
-,
-"description":"The id of the EHR system on which this EHR was created"
-},"uid": {
-"type":"string"
-,
-"description":"Emula un HIER_OBJECT_ID.root y su valor va a ser un UUID (java.util.UUID.randomUUID() as String) que se asigna en el momento que se crea el EHR"
-},"dateCreated": {
-"type":"string"
-,"format":"date",
-"description":"Emula timeCreated, se setea automaticamente por Grails en el momento de crear el EHR"
-},"subject": {
-"type":"string"
-,
-"description":"Emula EHR.ehr_status......subject"
-},"organizationUid": {
-"type":"string"
-,
-"description":"organizationUid"
-}
-}},"Person": {
+}},"definitions": {"Person": {
 "type": "object",
 "properties": {
 "firstName": {
@@ -222,6 +268,30 @@
 "type":"boolean"
 ,
 "description":"logical delete"
+}
+}},"Ehr": {
+"type": "object",
+"properties": {
+"systemId": {
+"type":"string"
+,
+"description":"The id of the EHR system on which this EHR was created"
+},"uid": {
+"type":"string"
+,
+"description":"Emula un HIER_OBJECT_ID.root y su valor va a ser un UUID (java.util.UUID.randomUUID() as String) que se asigna en el momento que se crea el EHR"
+},"dateCreated": {
+"type":"string"
+,"format":"date",
+"description":"Emula timeCreated, se setea automaticamente por Grails en el momento de crear el EHR"
+},"subject": {
+"type":"string"
+,
+"description":"Emula EHR.ehr_status......subject"
+},"organizationUid": {
+"type":"string"
+,
+"description":"organizationUid"
 }
 }},"Query": {
 "type": "object",
