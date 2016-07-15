@@ -18,7 +18,7 @@
 "description": "token de seguridad",
 "required": true,
 "type": "string"
-,"default": " Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZXh0cmFkYXRhIjp7Im9yZ2FuaXphdGlvbiI6IjEyMzQifSwiaXNzdWVkX2F0IjoiMjAxNi0wNi0xMlQxMTowMTo0Ni40NTNaIn0=.9xy9Lriu/RgbkAHET3NLcSwPZryewOwog55cguci/pE="},{"name": "firstName",
+,"default": " Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpjYWx2YXJlemhvcnVzIiwiZXh0cmFkYXRhIjp7Im9yZ2FuaXphdGlvbiI6IjMyOTIwOSJ9LCJpc3N1ZWRfYXQiOiIyMDE2LTA3LTE1VDEyOjM5OjExLjAzOC0wNDowMCJ9.iHgNQuZeoa6rzN2XSlhGFGF9p+f+9tgj00DquND0Qzs="},{"name": "firstName",
 "in": "query",
 "description": "descripcion de parametro firstName",
 "required": true,
@@ -88,7 +88,7 @@
 "description": "token de seguridad",
 "required": false,
 "type": "string"
-,"default": " Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZXh0cmFkYXRhIjp7Im9yZ2FuaXphdGlvbiI6IjEyMzQifSwiaXNzdWVkX2F0IjoiMjAxNi0wNi0xMlQxMTowMTo0Ni40NTNaIn0=.9xy9Lriu/RgbkAHET3NLcSwPZryewOwog55cguci/pE="},{"name": "format",
+,"default": " Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpjYWx2YXJlemhvcnVzIiwiZXh0cmFkYXRhIjp7Im9yZ2FuaXphdGlvbiI6IjMyOTIwOSJ9LCJpc3N1ZWRfYXQiOiIyMDE2LTA3LTE1VDEyOjM5OjExLjAzOC0wNDowMCJ9.iHgNQuZeoa6rzN2XSlhGFGF9p+f+9tgj00DquND0Qzs="},{"name": "format",
 "in": "query",
 "description": "descripcion de parametro format",
 "required": false,
@@ -118,7 +118,7 @@
 }
 }}
 },"/rest/login": {
-"get": {"summary": "Obtenemos token de seguridad",
+"post": {"summary": "Obtenemos token de seguridad",
 "description": "Obtenemos token de seguridad",
 "parameters": [
 {"name": "username",
@@ -156,7 +156,7 @@
 "description": "token de seguridad",
 "required": false,
 "type": "string"
-,"default": " Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZXh0cmFkYXRhIjp7Im9yZ2FuaXphdGlvbiI6IjEyMzQifSwiaXNzdWVkX2F0IjoiMjAxNi0wNi0xMlQxMTowMTo0Ni40NTNaIn0=.9xy9Lriu/RgbkAHET3NLcSwPZryewOwog55cguci/pE="},{"name": "format",
+,"default": " Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpjYWx2YXJlemhvcnVzIiwiZXh0cmFkYXRhIjp7Im9yZ2FuaXphdGlvbiI6IjMyOTIwOSJ9LCJpc3N1ZWRfYXQiOiIyMDE2LTA3LTE1VDEyOjM5OjExLjAzOC0wNDowMCJ9.iHgNQuZeoa6rzN2XSlhGFGF9p+f+9tgj00DquND0Qzs="},{"name": "format",
 "in": "query",
 "description": "descripcion de parametro format",
 "required": false,
@@ -194,7 +194,7 @@
 "description": "token de seguridad",
 "required": false,
 "type": "string"
-,"default": " Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZXh0cmFkYXRhIjp7Im9yZ2FuaXphdGlvbiI6IjEyMzQifSwiaXNzdWVkX2F0IjoiMjAxNi0wNi0xMlQxMTowMTo0Ni40NTNaIn0=.9xy9Lriu/RgbkAHET3NLcSwPZryewOwog55cguci/pE="},{"name": "format",
+,"default": " Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpjYWx2YXJlemhvcnVzIiwiZXh0cmFkYXRhIjp7Im9yZ2FuaXphdGlvbiI6IjMyOTIwOSJ9LCJpc3N1ZWRfYXQiOiIyMDE2LTA3LTE1VDEyOjM5OjExLjAzOC0wNDowMCJ9.iHgNQuZeoa6rzN2XSlhGFGF9p+f+9tgj00DquND0Qzs="},{"name": "format",
 "in": "query",
 "description": "descripcion de parametro format",
 "required": false,
