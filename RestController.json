@@ -1,7 +1,7 @@
 {"swagger":"2.0" 
 ,"info":{
  "title": "EHRServer",
- "description": "Descripcion de la clase RestController",
+ "description": "Descripcion de la clase RestController ",
 "version": "0.6"}
 ,"host": "cabolabs-ehrserver.rhcloud.com"
 ,"schemes": ["https"]
