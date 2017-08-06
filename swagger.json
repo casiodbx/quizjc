@@ -99,7 +99,7 @@
         }
       }
     },
-    "/users": {
+    "/userRegister": {
       "post": {
         "tags": [
           "administrative"
